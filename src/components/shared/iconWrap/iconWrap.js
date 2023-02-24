@@ -1,9 +1,9 @@
 import React from "react";
 import { IconContainer } from "./iconWrap.style";
 
-const IconWrap = ({ children, color, width, heigth, clickable }) => {
+const IconWrap = ({ children, color, width, height, clickable }) => {
     return (
-        <IconContainer color={color} width={width} heigth={heigth} clickable={clickable}>
+        <IconContainer color={color} width={width} height={height} clickable={clickable}>
             {children}
         </IconContainer>
     );
