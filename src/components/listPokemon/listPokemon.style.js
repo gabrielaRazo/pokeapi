@@ -9,7 +9,7 @@ export const TextInfo = styled.p`
 `;
 
 export const Title = styled.p`
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 100;
     text-transform: capitalize;
     color: #73787c;
@@ -17,6 +17,9 @@ export const Title = styled.p`
 
 export const Container = styled.div`
     height: 100vh;
+    @media (max-width: 1000px) {
+        height: 100%;
+    }
     background-color: #eff2f5;
     padding-top: 3em;
 `;

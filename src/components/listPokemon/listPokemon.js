@@ -10,7 +10,7 @@ const ListPokemons = ({ listPokemons, infoPokemon, handleClick, onShowPokemonInf
     return (
         <Row center>
             {listPokemons.map((pokemon) => (
-                <Col key={pokemon.url} lg={2} md={2} sm={5} xs={5} center space>
+                <Col key={pokemon.url} lg={2} md={2} sm={4} xs={4} center space>
                     <Card space height={150} selected={infoPokemon.name === pokemon.name}>
                         <div
                             onClick={(e) => {
