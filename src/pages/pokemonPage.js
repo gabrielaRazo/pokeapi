@@ -30,23 +30,27 @@ const PokemonPage = () => {
         <Container>
             <Row center>
                 <Col lg={7} md={7} sm={10} xs={10}>
-                    <Card shadow>
-                        <Row>
-                            <BackButton onClick={onClickReturn} />
-                            <Col lg={10} md={10} sm={10} xs={10}>
-                                <PokemonDetails infoPokemon={infoPokemon} />
-                            </Col>
-                        </Row>
-                        <Row center>
-                            <Image src={infoPokemon.sprites.back_shiny_female} alt="back_shiny_female" />
-                            <Image src={infoPokemon.sprites.front_female} alt="front_female" />
-                            <Image src={infoPokemon.sprites.back_default} alt="back_default" />
-                            <Image src={infoPokemon.sprites.front_shiny_female} alt="front_shiny_female" />
-                            <Image src={infoPokemon.sprites.back_female} alt="back_female" />
-                            <Image src={infoPokemon.sprites.front_shiny} alt="front_shiny" />
-                            <Image src={infoPokemon.sprites.back_shiny} alt="back_shiny" />
-                        </Row>
-                    </Card>
+                    {infoPokemon.sprites ? (
+                        <Card shadow>
+                            <Row>
+                                <BackButton onClick={onClickReturn} />
+                                <Col lg={10} md={10} sm={10} xs={10}>
+                                    <PokemonDetails infoPokemon={infoPokemon} />
+                                </Col>
+                            </Row>
+                            <Row center>
+                                <Image src={infoPokemon.sprites.back_shiny_female} alt="back_shiny_female" />
+                                <Image src={infoPokemon.sprites.front_female} alt="front_female" />
+                                <Image src={infoPokemon.sprites.back_default} alt="back_default" />
+                                <Image src={infoPokemon.sprites.front_shiny_female} alt="front_shiny_female" />
+                                <Image src={infoPokemon.sprites.back_female} alt="back_female" />
+                                <Image src={infoPokemon.sprites.front_shiny} alt="front_shiny" />
+                                <Image src={infoPokemon.sprites.back_shiny} alt="back_shiny" />
+                            </Row>
+                        </Card>
+                    ) : (
+                        false
+                    )}
                 </Col>
             </Row>
         </Container>
