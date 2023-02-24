@@ -1,9 +1,11 @@
 import axios from "axios";
 
+const endopoint = "https://pokeapi.co/api/v2/pokemon";
+
 export function getPokemonsCall(offset) {
     return axios({
         method: "get",
-        url: "https://pokeapi.co/api/v2/pokemon?limit=20&offset=" + offset,
+        url: endopoint + "?limit=20&offset=" + offset,
         headers: { "Content-Type": "application/json", Authorization: null },
     })
         .then((response) => {
@@ -14,10 +16,10 @@ export function getPokemonsCall(offset) {
         });
 }
 
-export function getInfoPokemonCall(endpoint) {
+export function getInfoPokemonCall(url) {
     return axios({
         method: "get",
-        url: endpoint,
+        url: url,
         headers: { "Content-Type": "application/json", Authorization: null },
     })
         .then((response) => {
@@ -31,7 +33,7 @@ export function getInfoPokemonCall(endpoint) {
 export function pokemonByIDCall(id) {
     return axios({
         method: "get",
-        url: "https://pokeapi.co/api/v2/pokemon/" + id,
+        url: endopoint + "/" + id,
         headers: { "Content-Type": "application/json", Authorization: null },
     })
         .then((response) => {
