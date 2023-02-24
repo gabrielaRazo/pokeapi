@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Card from "../components/shared/card/card";
 import Col from "../components/shared/col/col";
 import Row from "../components/shared/row/row";
-import Image from "../components/shared/image/image";
-import { Container, TextInfo, Title } from "./listPokemon.style";
+import { Container } from "../components/listPokemon/listPokemon.style";
 import Pagination from "../components/shared/pagination/pagination";
+import ListPokemons from "../components/listPokemon/listPokemon";
 
 const ListPage = () => {
     const navigate = useNavigate();
@@ -46,23 +45,7 @@ const ListPage = () => {
                         <Pagination currentPage={page} totalPages={parseInt(150 / 20)} onPreviousPage={() => setPage(page - 1)} onNextPage={() => setPage(page + 1)} />
                     </Col>
                 </Row>
-                <Row center>
-                    {listPokemons.map((pokemon) => (
-                        <Col lg={2} md={2} sm={5} xs={5} center space>
-                            <Card space height={150} selected={infoPokemon.name === pokemon.name}>
-                                <div
-                                    onClick={(e) => {
-                                        onShowPokemonInfo(pokemon.url);
-                                        handleClick(e);
-                                    }}
-                                >
-                                    {infoPokemon.name === pokemon.name ? <Image src={infoPokemon.sprites.front_default} width={100} /> : <TextInfo>Click here to see its picture</TextInfo>}
-                                    <Title>{pokemon.name}</Title>
-                                </div>
-                            </Card>
-                        </Col>
-                    ))}
-                </Row>
+                <ListPokemons listPokemons={listPokemons} infoPokemon={infoPokemon} handleClick={handleClick} onShowPokemonInfo={onShowPokemonInfo} />
                 <Row center>
                     <Col lg={4} md={4} sm={6} xs={6}>
                         <Pagination currentPage={page} totalPages={parseInt(150 / 20)} onPreviousPage={() => setPage(page - 1)} onNextPage={() => setPage(page + 1)} />
