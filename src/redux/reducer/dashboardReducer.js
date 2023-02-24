@@ -1,8 +1,6 @@
 import * as dashboardActions from "../actions/dashboardActions";
 
 const initialState = {
-    test: "Hello",
-
     listPokemons: [],
     total: 0,
 
@@ -11,9 +9,6 @@ const initialState = {
 
 const dashboardReducer = (state = initialState, action) => {
     switch (action.type) {
-        case dashboardActions.CHANGE_TEST_VALUE:
-            return { ...state, test: action.test };
-
         case dashboardActions.GET_POKEMON_REQUEST:
             return { ...state };
         case dashboardActions.GET_POKEMON_SUCCESS:
