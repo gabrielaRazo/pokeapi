@@ -4,7 +4,8 @@ import { getPokemonsCall, getInfoPokemonCall, pokemonByIDCall } from "../service
 
 function* getPokemons(action) {
     try {
-        const page = action.page - 1;
+        const page = action.page === 1 ? action.page - 1 : (action.page - 1) * 20;
+        console.log("page", page);
         const response = yield call(getPokemonsCall, page);
         if (response.status === 200) {
             const listPokemons = response.data.results;
