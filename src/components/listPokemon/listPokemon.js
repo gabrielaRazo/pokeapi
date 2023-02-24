@@ -4,6 +4,7 @@ import Card from "../shared/card/card";
 import Col from "../shared/col/col";
 import Image from "../shared/image/image";
 import Row from "../shared/row/row";
+import Tooltip from "../shared/tooltip/tooltip";
 
 const ListPokemons = ({ listPokemons, infoPokemon, handleClick, onShowPokemonInfo }) => {
     return (
@@ -17,7 +18,15 @@ const ListPokemons = ({ listPokemons, infoPokemon, handleClick, onShowPokemonInf
                                 handleClick(e);
                             }}
                         >
-                            {infoPokemon.name === pokemon.name ? <Image src={infoPokemon.sprites.front_default} width={100} /> : <TextInfo>Click here to see its picture</TextInfo>}
+                            {infoPokemon.name === pokemon.name ? (
+                                <Tooltip text="Double click to see more">
+                                    <Image src={infoPokemon.sprites.front_default} width={100} />
+                                </Tooltip>
+                            ) : (
+                                <Tooltip top text="Click here to see its picture">
+                                    <TextInfo>Who is that pokemon?</TextInfo>
+                                </Tooltip>
+                            )}
                             <Title>{pokemon.name}</Title>
                         </div>
                     </Card>
