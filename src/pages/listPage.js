@@ -30,7 +30,6 @@ const ListPage = () => {
     };
 
     const onShowPokemonInfo = (url) => {
-        console.log("url", url);
         dispatch({
             type: "GET_INFO_POKEMON_REQUEST",
             url: url,

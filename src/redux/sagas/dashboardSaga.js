@@ -43,9 +43,7 @@ export function* getInfoPokemonSaga() {
 function* pokemonByID(action) {
     try {
         const id = action.id;
-        console.log("id", id);
         const response = yield call(pokemonByIDCall, id);
-        console.log("response", response);
         if (response.status === 200) {
             const infoPokemon = response.data;
             yield put({ type: dashboardActions.GET_POKEMON_ID_SUCCESS, infoPokemon });
