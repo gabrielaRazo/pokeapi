@@ -35,6 +35,9 @@ export const ColContainer = styled.div`
     padding: 8px 0;
     ${({ space }) => space && `padding-left: 0.5em; padding-right: 0.5em`};
 
+    @media (max-width: 700px) {
+        padding-left: 0px;
+    }
     @media (max-width: 420px) {
         ${({ xs }) => (xs ? getWidthStrings(xs) : "width: 100%")};
     }
