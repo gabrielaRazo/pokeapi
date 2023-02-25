@@ -41,13 +41,13 @@ const ListPage = () => {
             <Container>
                 <Row center>
                     <Col hidden={"lg"} collapse={"md"} sm={6} xs={6}>
-                        <Pagination currentPage={page} totalPages={parseInt(150 / 20)} onPreviousPage={() => setPage(page - 1)} onNextPage={() => setPage(page + 1)} />
+                        <Pagination currentPage={page} totalPages={8} onPreviousPage={() => setPage(page - 1)} onNextPage={() => setPage(page + 1)} />
                     </Col>
                 </Row>
                 <ListPokemons listPokemons={listPokemons} infoPokemon={infoPokemon} handleClick={handleClick} onShowPokemonInfo={onShowPokemonInfo} />
                 <Row center>
                     <Col lg={4} md={4} sm={6} xs={6}>
-                        <Pagination currentPage={page} totalPages={parseInt(150 / 20)} onPreviousPage={() => setPage(page - 1)} onNextPage={() => setPage(page + 1)} />
+                        <Pagination currentPage={page} totalPages={8} onPreviousPage={() => setPage(page - 1)} onNextPage={() => setPage(page + 1)} />
                     </Col>
                 </Row>
             </Container>

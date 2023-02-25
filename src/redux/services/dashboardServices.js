@@ -2,10 +2,10 @@ import axios from "axios";
 
 const endopoint = "https://pokeapi.co/api/v2/pokemon";
 
-export function getPokemonsCall(offset) {
+export function getPokemonsCall(offset, limit) {
     return axios({
         method: "get",
-        url: endopoint + "?limit=20&offset=" + offset,
+        url: endopoint + "?limit=" + limit + "&offset=" + offset,
         headers: { "Content-Type": "application/json", Authorization: null },
     })
         .then((response) => {
